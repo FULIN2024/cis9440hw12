@@ -1,6 +1,6 @@
-CREATE SCHEMA budgetExpense;
+CREATE SCHEMA BudgetExpense;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.`Facts_Budget/Expense` ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.`Facts_Budget/Expense` ( 
 	Fact_ID int64 NOT NULL  ,
 	Budget numeric  ,
 	Expenditures numeric  ,
@@ -13,19 +13,19 @@ CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.`Facts_Budget/Expense` (
 	Dept_rollup string  ,
 	Expense_quater int64  ,
 	Budget_deficit numeric  ,
-	KEY int64  
+	Key int64  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.`Facts_Budget/Expense` ADD PRIMARY KEY ( Fact_ID, Unit_Code )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.`Facts_Budget/Expense` ADD PRIMARY KEY ( Fact_ID, Unit_Code )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Activity ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Activity ( 
 	ActivityCode int64 NOT NULL  ,
 	ActivityName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Activity ADD PRIMARY KEY ( ActivityCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Activity ADD PRIMARY KEY ( ActivityCode )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Date ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Date ( 
 	date_id int64 NOT NULL  ,
 	year int64  ,
 	quarter int64  ,
@@ -36,46 +36,46 @@ CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Date (
 	Expense_quater int64  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Date ADD PRIMARY KEY ( date_id )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Date ADD PRIMARY KEY ( date_id )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Department ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Department ( 
 	DepartmentCode int64 NOT NULL  ,
 	DepartmentName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Department ADD PRIMARY KEY ( DepartmentCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Department ADD PRIMARY KEY ( DepartmentCode )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Dept_rollup ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Dept_rollup ( 
 	Dept_rollup int64 NOT NULL  ,
 	Dept_rollup_name string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Dept_rollup ADD PRIMARY KEY ( Dept_rollup )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Dept_rollup ADD PRIMARY KEY ( Dept_rollup )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Expense ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Expense ( 
 	ExpenseCode int64 NOT NULL  ,
 	ExpenseName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Expense ADD PRIMARY KEY ( ExpenseCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Expense ADD PRIMARY KEY ( ExpenseCode )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Fund ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Fund ( 
 	FundCode int64 NOT NULL  ,
 	FundName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Fund ADD PRIMARY KEY ( FundCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Fund ADD PRIMARY KEY ( FundCode )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Program ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Program ( 
 	ProgramCode int64 NOT NULL  ,
 	ProgramName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Program ADD PRIMARY KEY ( ProgramCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Program ADD PRIMARY KEY ( ProgramCode )  NOT ENFORCED;
 
-CREATE TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Unit ( 
+CREATE TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Unit ( 
 	UnitCode int64 NOT NULL  ,
 	UnitName string  
  );
 
-ALTER TABLE `Budget&Expense_dw-lgl`.budgetExpense.dim_Unit ADD PRIMARY KEY ( UnitCode )  NOT ENFORCED;
+ALTER TABLE `Budget&Expense_dw-lgl`.BudgetExpense.dim_Unit ADD PRIMARY KEY ( UnitCode )  NOT ENFORCED;
