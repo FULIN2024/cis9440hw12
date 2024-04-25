@@ -5,8 +5,6 @@
 			<column name="Fact_ID" type="BIGINT" jt="-5" mandatory="y" />
 			<column name="Budget" type="DECIMAL" length="8" decimal="2" jt="3" />
 			<column name="Expenditures" type="DECIMAL" length="8" decimal="2" jt="3" />
-			<column name="Personnel_Costs" type="DECIMAL" length="8" decimal="2" jt="3" />
-			<column name="Projected_Expenditures" type="DECIMAL" length="8" decimal="2" jt="3" />
 			<column name="Department_Code" type="VARCHAR" length="5" jt="12" />
 			<column name="Fund_Code" prior="Fund Code" type="VARCHAR" length="5" jt="12" />
 			<column name="Program_Code" type="VARCHAR" length="5" jt="12" />
@@ -14,7 +12,9 @@
 			<column name="Unit_Code" type="VARCHAR" length="5" jt="12" mandatory="y" />
 			<column name="Expense_Code" type="VARCHAR" length="5" jt="12" />
 			<column name="Dept_rollup" type="VARCHAR" length="10" jt="12" />
-			<column name="Expense_date" type="BIGINT" jt="-5" />
+			<column name="quarterNumber" prior="Expense_quater" type="BIGINT" jt="-5" />
+			<column name="Budget_deficit" type="NUMERIC" jt="2" />
+			<column name="Key" type="BIGINT" jt="-5" />
 			<index name="pk_Facts" unique="PRIMARY_KEY" >
 				<column name="Fact_ID" />
 				<column name="Unit_Code" />
@@ -41,7 +41,7 @@
 				<fk_column name="Dept_rollup" pk="Dept_rollup" />
 			</fk>
 			<fk name="fk_Facts_Budget/Expense_dim_Date" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Date" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
-				<fk_column name="Expense_date" pk="Expense_date" />
+				<fk_column name="quarterNumber" pk="quaterNumber" />
 			</fk>
 		</table>
 		<table name="dim_Activity" prior="Entity" >
@@ -54,20 +54,14 @@
 		<table name="dim_Date" prior="dim_" >
 			<column name="date_id" prior="year" type="BIGINT" jt="-5" mandatory="y" />
 			<column name="year" type="INT" jt="4" />
-			<column name="quarter" type="INT" jt="4" />
-			<column name="monthnumber" prior="month" type="INT" jt="4" />
-			<column name="daynumber" type="INT" jt="4" />
-			<column name="hournumber" type="INT" jt="4" />
-			<column name="monthname" type="VARCHAR" length="50" jt="12" />
-			<column name="dayname" type="VARCHAR" length="50" jt="12" />
+			<column name="quaterNumber" prior="monthnumber" type="BIGINT" jt="-5" />
 			<column name="weekoftheyear" prior="weekofyear" type="INT" jt="4" />
-			<column name="weekofthemonth" type="INT" jt="4" />
-			<column name="Expense_date" type="BIGINT" jt="-5" />
+			<column name="weekofthequater" prior="weekofthemonth" type="INT" jt="4" />
 			<index name="pk_dim_Date" unique="PRIMARY_KEY" >
 				<column name="date_id" />
 			</index>
-			<index name="unq_Expense_date" unique="UNIQUE_INDEX" >
-				<column name="Expense_date" />
+			<index name="unq_quaterNumber" unique="UNIQUE_INDEX" >
+				<column name="quaterNumber" />
 			</index>
 		</table>
 		<table name="dim_Department" prior="Entity" >
