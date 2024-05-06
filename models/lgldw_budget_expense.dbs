@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Budget&amp;Expense_dw_lgl" id="LogicalDesign-1c39" database="LogicalDesign" >
+	<schema name="INSTANCE" catalogname="Budget&amp;Expense_dw-lgl" >
+		<table name="Facts_Budget/Expense" prior="Facts_Budget&amp;Expense" >
+			<column name="Fact_ID" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="Budget" type="DECIMAL" length="8" decimal="2" jt="3" />
+			<column name="Expenditures" type="DECIMAL" length="8" decimal="2" jt="3" />
+			<column name="DepartmentCode" prior="Department_Code" type="VARCHAR" length="5" jt="12" />
+			<column name="FundCode" prior="Fund_Code" type="VARCHAR" length="5" jt="12" />
+			<column name="ProgramCode" prior="Program_Code" type="VARCHAR" length="5" jt="12" />
+			<column name="ActivityCode" prior="Activity_Code" type="VARCHAR" length="5" jt="12" />
+			<column name="UnitCode" prior="Unit_Code" type="VARCHAR" length="5" jt="12" mandatory="y" />
+			<column name="ExpenseCode" prior="Expense_Code" type="VARCHAR" length="5" jt="12" />
+			<column name="Dept_rollup" type="VARCHAR" length="10" jt="12" />
+			<column name="Thru_quarter" prior="quarterNumber" type="BIGINT" jt="-5" />
+			<column name="Budget_deficit" type="NUMERIC" jt="2" />
+			<column name="Key" type="BIGINT" jt="-5" />
+			<index name="pk_Facts" unique="PRIMARY_KEY" >
+				<column name="Fact_ID" />
+				<column name="UnitCode" />
+			</index>
+			<fk name="fk_Facts__dim_Unit" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Unit" type="Identifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="UnitCode" pk="UnitCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Department" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Department" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="DepartmentCode" pk="DepartmentCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Fund" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Fund" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="FundCode" pk="FundCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Program" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Program" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="ProgramCode" pk="ProgramCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Activity" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Activity" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="ActivityCode" pk="ActivityCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Expense" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Expense" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="ExpenseCode" pk="ExpenseCode" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Dept_rollup" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Dept_rollup" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="Dept_rollup" pk="Dept_rollup" />
+			</fk>
+			<fk name="fk_Facts_Budget/Expense_dim_Date" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.INSTANCE" to_table="dim_Date" type="NonIdentifying" mandatory="n" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="Thru_quarter" pk="Thru_quarter" />
+			</fk>
+		</table>
+		<table name="dim_Activity" prior="Entity" >
+			<column name="ActivityCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="ActivityName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_Activity" unique="PRIMARY_KEY" >
+				<column name="ActivityCode" />
+			</index>
+		</table>
+		<table name="dim_Date" prior="dim_" >
+			<column name="date_id" prior="year" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="Budget_fiscal_year" prior="year" type="INT" jt="4" />
+			<column name="Thru_quarter" prior="quaterNumber" type="BIGINT" jt="-5" />
+			<index name="pk_dim_Date" unique="PRIMARY_KEY" >
+				<column name="date_id" />
+			</index>
+			<index name="unq_quaterNumber" unique="UNIQUE_INDEX" >
+				<column name="Thru_quarter" />
+			</index>
+		</table>
+		<table name="dim_Department" prior="Entity" >
+			<column name="DepartmentCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="DepartmentName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_Department" unique="PRIMARY_KEY" >
+				<column name="DepartmentCode" />
+			</index>
+		</table>
+		<table name="dim_Dept_rollup" prior="dim_Dept_" >
+			<column name="Dept_rollup" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="Dept_rollup_name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_Dept_rollup" unique="PRIMARY_KEY" >
+				<column name="Dept_rollup" />
+			</index>
+		</table>
+		<table name="dim_Expense" prior="dim_ExpenseCategory" >
+			<column name="ExpenseCode" prior="ExpenseCategoryCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="ExpenseName" prior="ExpenseCategoryName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_ExpenseCategory" unique="PRIMARY_KEY" >
+				<column name="ExpenseCode" />
+			</index>
+		</table>
+		<table name="dim_Fund" prior="Fund" >
+			<column name="FundCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="FundName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_FundCode" unique="PRIMARY_KEY" >
+				<column name="FundCode" />
+			</index>
+		</table>
+		<table name="dim_Program" prior="Entity" >
+			<column name="ProgramCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="ProgramName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_Program" unique="PRIMARY_KEY" >
+				<column name="ProgramCode" />
+			</index>
+		</table>
+		<table name="dim_Unit" prior="Unit" >
+			<column name="UnitCode" prior="UnitID" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="UnitName" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_Unit" unique="PRIMARY_KEY" >
+				<column name="UnitCode" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-22aa" show_relation="columns" >
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="Facts_Budget/Expense" color="C1D8EE" x="357" y="340" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Activity" color="C1D8EE" x="340" y="663" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Date" color="C1D8EE" x="697" y="340" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Department" color="C1D8EE" x="51" y="204" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Dept_rollup" color="C1D8EE" x="697" y="187" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Expense" color="C1D8EE" x="697" y="646" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Fund" color="C1D8EE" x="51" y="340" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Program" color="C1D8EE" x="51" y="510" />
+		<entity schema="Budget&amp;Expense_dw-lgl.INSTANCE" name="dim_Unit" color="C1D8EE" x="391" y="170" />
+		<callout x="51" y="51" pointer="Round" >
+			<comment><![CDATA[This is a layout - a diagram with tools.
+- Create new entities by right-clicking the layout. 
+- Double-click entity headers to edit.
+- For a better understanding of the schema, create multiple layouts.
+- Deploy the model into the database by converting it first to the physical design.]]></comment>
+		</callout>
+	</layout>
+</project>
