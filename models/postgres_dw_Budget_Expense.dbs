@@ -1,80 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="Budget&amp;Expense_dw_lgl" id="PostgreSQL-233c" database="PostgreSQL" >
+<project name="Budget&amp;Expense_dw_lgl" id="PostgreSQL-1396" database="PostgreSQL" >
 	<schema name="instance" catalogname="Budget&amp;Expense_dw-lgl" >
 		<table name="dim_activity" prior="dim_Activity" >
-			<column name="activitycode" prior="ActivityCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="activitycode" prior="ActivityCode" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="activityname" prior="ActivityName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_activity" unique="PRIMARY_KEY" >
 				<column name="activitycode" />
 			</index>
 		</table>
-		<table name="dim_date" prior="dim_Date" >
-			<column name="date_id" type="BIGINT" jt="-5" mandatory="y" />
-			<column name="budget_fiscal_year" prior="Budget_fiscal_year" type="INT" jt="4" />
-			<column name="thru_quarter" prior="Thru_quarter" type="BIGINT" jt="-5" />
-			<index name="pk_dim_date" unique="PRIMARY_KEY" >
-				<column name="date_id" />
-			</index>
-			<index name="unq_quaternumber" unique="UNIQUE_INDEX" >
-				<column name="thru_quarter" />
-			</index>
-		</table>
 		<table name="dim_department" prior="dim_Department" >
-			<column name="departmentcode" prior="DepartmentCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="departmentcode" prior="DepartmentCode" type="INT" jt="4" mandatory="y" />
 			<column name="departmentname" prior="DepartmentName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_department" unique="PRIMARY_KEY" >
 				<column name="departmentcode" />
 			</index>
 		</table>
 		<table name="dim_dept_rollup" prior="dim_Dept_rollup" >
-			<column name="dept_rollup" prior="Dept_rollup" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="dept_rollup" prior="Dept_rollup" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="dept_rollup_name" prior="Dept_rollup_name" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_dept_rollup" unique="PRIMARY_KEY" >
 				<column name="dept_rollup" />
 			</index>
 		</table>
 		<table name="dim_expense" prior="dim_Expense" >
-			<column name="expensecode" prior="ExpenseCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="expensecode" prior="ExpenseCode" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="expensename" prior="ExpenseName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_expensecategory" unique="PRIMARY_KEY" >
 				<column name="expensecode" />
 			</index>
 		</table>
 		<table name="dim_fund" prior="dim_Fund" >
-			<column name="fundcode" prior="FundCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="fundcode" prior="FundCode" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="fundname" prior="FundName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_fundcode" unique="PRIMARY_KEY" >
 				<column name="fundcode" />
 			</index>
 		</table>
 		<table name="dim_program" prior="dim_Program" >
-			<column name="programcode" prior="ProgramCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="programcode" prior="ProgramCode" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="programname" prior="ProgramName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_program" unique="PRIMARY_KEY" >
 				<column name="programcode" />
 			</index>
 		</table>
 		<table name="dim_unit" prior="dim_Unit" >
-			<column name="unitcode" prior="UnitCode" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="unitcode" prior="UnitCode" type="VARCHAR" jt="12" mandatory="y" />
 			<column name="unitname" prior="UnitName" type="VARCHAR" length="100" jt="12" />
 			<index name="pk_dim_unit" unique="PRIMARY_KEY" >
 				<column name="unitcode" />
 			</index>
 		</table>
 		<table name="facts_budget/expense" prior="Facts_Budget/Expense" >
-			<column name="fact_id" prior="Fact_ID" type="BIGINT" jt="-5" mandatory="y" />
-			<column name="budget" prior="Budget" type="DECIMAL" length="8" decimal="2" jt="3" />
-			<column name="expenditures" prior="Expenditures" type="DECIMAL" length="8" decimal="2" jt="3" />
-			<column name="departmentcode" prior="DepartmentCode" type="VARCHAR" length="5" jt="12" />
-			<column name="fundcode" prior="FundCode" type="VARCHAR" length="5" jt="12" />
-			<column name="programcode" prior="ProgramCode" type="VARCHAR" length="5" jt="12" />
-			<column name="activitycode" prior="ActivityCode" type="VARCHAR" length="5" jt="12" />
-			<column name="unitcode" prior="UnitCode" type="VARCHAR" length="5" jt="12" mandatory="y" />
-			<column name="expensecode" prior="ExpenseCode" type="VARCHAR" length="5" jt="12" />
-			<column name="dept_rollup" prior="Dept_rollup" type="VARCHAR" length="10" jt="12" />
-			<column name="thru_quarter" prior="Thru_quarter" type="BIGINT" jt="-5" />
-			<column name="budget_deficit" prior="Budget_deficit" type="NUMERIC" jt="2" />
-			<column name="key" prior="Key" type="BIGINT" jt="-5" />
+			<column name="fact_id" type="BIGINT" jt="-5" mandatory="y" />
+			<column name="budget_fiscal_year" prior="Budget_fiscal_year" type="INT" jt="4" />
+			<column name="thru_quarter" prior="Thru_quarter" type="INT" jt="4" />
+			<column name="fiscal_year_id" type="INT" jt="4" />
+			<column name="dept_rollup" prior="Dept_rollup" type="VARCHAR" jt="12" />
+			<column name="dept_rollup_name" prior="Dept_rollup_name" type="VARCHAR" length="100" jt="12" />
+			<column name="departmentcode" prior="DepartmentCode" type="INT" jt="4" />
+			<column name="departmentname" prior="DepartmentName" type="VARCHAR" length="100" jt="12" />
+			<column name="fundcode" prior="FundCode" type="VARCHAR" jt="12" />
+			<column name="fundname" prior="FundName" type="VARCHAR" length="100" jt="12" />
+			<column name="programcode" prior="ProgramCode" type="VARCHAR" jt="12" />
+			<column name="programname" prior="ProgramName" type="VARCHAR" length="100" jt="12" />
+			<column name="activitycode" prior="ActivityCode" type="VARCHAR" jt="12" />
+			<column name="activityname" prior="ActivityName" type="VARCHAR" length="100" jt="12" />
+			<column name="unitcode" prior="UnitCode" type="VARCHAR" jt="12" mandatory="y" />
+			<column name="unitname" prior="UnitName" type="VARCHAR" length="100" jt="12" />
+			<column name="expensecode" prior="ExpenseCode" type="VARCHAR" jt="12" />
+			<column name="expensename" prior="ExpenseName" type="VARCHAR" length="100" jt="12" />
+			<column name="budget" prior="Budget" type="DECIMAL" length="20" decimal="2" jt="3" />
+			<column name="expenditures" prior="Expenditures" type="DECIMAL" length="20" decimal="2" jt="3" />
+			<column name="budget_deficit" prior="Budget_deficit" type="DECIMAL" length="20" decimal="2" jt="3" />
+			<column name="key" prior="Key" type="VARCHAR" jt="12" />
 			<index name="pk_facts" unique="PRIMARY_KEY" >
 				<column name="fact_id" />
 				<column name="unitcode" />
@@ -100,19 +98,15 @@
 			<fk name="fk_facts_budget/expense_dim_dept_rollup" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.instance" to_table="dim_dept_rollup" >
 				<fk_column name="dept_rollup" pk="dept_rollup" />
 			</fk>
-			<fk name="fk_facts_budget/expense_dim_date" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.instance" to_table="dim_date" >
-				<fk_column name="thru_quarter" pk="thru_quarter" />
-			</fk>
 		</table>
 	</schema>
-	<layout name="Default Layout" id="Layout-adc" confirmed="y" show_relation="columns" >
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_activity" color="C1D8EE" x="340" y="663" />
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_date" color="C1D8EE" x="697" y="340" />
+	<layout name="Default Layout" id="Layout-faa" confirmed="y" show_relation="columns" >
+		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_activity" color="C1D8EE" x="714" y="595" />
 		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_department" color="C1D8EE" x="51" y="204" />
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_dept_rollup" color="C1D8EE" x="697" y="187" />
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_expense" color="C1D8EE" x="697" y="646" />
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_fund" color="C1D8EE" x="51" y="340" />
-		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_program" color="C1D8EE" x="51" y="510" />
+		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_dept_rollup" color="C1D8EE" x="714" y="204" />
+		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_expense" color="C1D8EE" x="714" y="425" />
+		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_fund" color="C1D8EE" x="51" y="442" />
+		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_program" color="C1D8EE" x="51" y="595" />
 		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="dim_unit" color="C1D8EE" x="391" y="170" />
 		<entity schema="Budget&amp;Expense_dw-lgl.instance" name="facts_budget/expense" color="C1D8EE" x="357" y="340" />
 		<callout x="51" y="51" pointer="Round" >
@@ -122,74 +116,74 @@
 - For a better understanding of the schema, create multiple layouts.
 - Deploy the model into the database by converting it first to the physical design.]]></comment>
 		</callout>
-		<script name="SQL_Editor" id="Editor-af9" language="SQL" >
+		<script name="SQL_Editor" id="Editor-2e7" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA IF NOT EXISTS "instance";
 
 CREATE  TABLE "instance".dim_activity ( 
-	activitycode         BIGINT  NOT NULL  ,
+	activitycode         VARCHAR  NOT NULL  ,
 	activityname         VARCHAR(100)    ,
 	CONSTRAINT pk_dim_activity PRIMARY KEY ( activitycode )
  );
 
-CREATE  TABLE "instance".dim_date ( 
-	date_id              BIGINT  NOT NULL  ,
-	budget_fiscal_year   INT    ,
-	thru_quarter         BIGINT    ,
-	CONSTRAINT pk_dim_date PRIMARY KEY ( date_id )
- );
-
-CREATE UNIQUE INDEX unq_quaternumber ON "instance".dim_date ( thru_quarter );
-
 CREATE  TABLE "instance".dim_department ( 
-	departmentcode       BIGINT  NOT NULL  ,
+	departmentcode       INT  NOT NULL  ,
 	departmentname       VARCHAR(100)    ,
 	CONSTRAINT pk_dim_department PRIMARY KEY ( departmentcode )
  );
 
 CREATE  TABLE "instance".dim_dept_rollup ( 
-	dept_rollup          BIGINT  NOT NULL  ,
+	dept_rollup          VARCHAR  NOT NULL  ,
 	dept_rollup_name     VARCHAR(100)    ,
 	CONSTRAINT pk_dim_dept_rollup PRIMARY KEY ( dept_rollup )
  );
 
 CREATE  TABLE "instance".dim_expense ( 
-	expensecode          BIGINT  NOT NULL  ,
+	expensecode          VARCHAR  NOT NULL  ,
 	expensename          VARCHAR(100)    ,
 	CONSTRAINT pk_dim_expensecategory PRIMARY KEY ( expensecode )
  );
 
 CREATE  TABLE "instance".dim_fund ( 
-	fundcode             BIGINT  NOT NULL  ,
+	fundcode             VARCHAR  NOT NULL  ,
 	fundname             VARCHAR(100)    ,
 	CONSTRAINT pk_fundcode PRIMARY KEY ( fundcode )
  );
 
 CREATE  TABLE "instance".dim_program ( 
-	programcode          BIGINT  NOT NULL  ,
+	programcode          VARCHAR  NOT NULL  ,
 	programname          VARCHAR(100)    ,
 	CONSTRAINT pk_dim_program PRIMARY KEY ( programcode )
  );
 
 CREATE  TABLE "instance".dim_unit ( 
-	unitcode             BIGINT  NOT NULL  ,
+	unitcode             VARCHAR  NOT NULL  ,
 	unitname             VARCHAR(100)    ,
 	CONSTRAINT pk_dim_unit PRIMARY KEY ( unitcode )
  );
 
 CREATE  TABLE "instance"."facts_budget/expense" ( 
 	fact_id              BIGINT  NOT NULL  ,
-	budget               DECIMAL(8,2)    ,
-	expenditures         DECIMAL(8,2)    ,
-	departmentcode       VARCHAR(5)    ,
-	fundcode             VARCHAR(5)    ,
-	programcode          VARCHAR(5)    ,
-	activitycode         VARCHAR(5)    ,
-	unitcode             VARCHAR(5)  NOT NULL  ,
-	expensecode          VARCHAR(5)    ,
-	dept_rollup          VARCHAR(10)    ,
-	thru_quarter         BIGINT    ,
-	budget_deficit       NUMERIC    ,
-	"key"                BIGINT    ,
+	budget_fiscal_year   INT    ,
+	thru_quarter         INT    ,
+	fiscal_year_id       INT    ,
+	dept_rollup          VARCHAR    ,
+	dept_rollup_name     VARCHAR(100)    ,
+	departmentcode       INT    ,
+	departmentname       VARCHAR(100)    ,
+	fundcode             VARCHAR    ,
+	fundname             VARCHAR(100)    ,
+	programcode          VARCHAR    ,
+	programname          VARCHAR(100)    ,
+	activitycode         VARCHAR    ,
+	activityname         VARCHAR(100)    ,
+	unitcode             VARCHAR  NOT NULL  ,
+	unitname             VARCHAR(100)    ,
+	expensecode          VARCHAR    ,
+	expensename          VARCHAR(100)    ,
+	budget               DECIMAL(20,2)    ,
+	expenditures         DECIMAL(20,2)    ,
+	budget_deficit       DECIMAL(20,2)    ,
+	"key"                VARCHAR    ,
 	CONSTRAINT pk_facts PRIMARY KEY ( fact_id, unitcode )
  );
 ]]></string>
