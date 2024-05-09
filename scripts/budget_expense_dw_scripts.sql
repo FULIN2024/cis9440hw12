@@ -1,4 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS "TheBudgetExpense";
+CREATE SCHEMA IF NOT EXISTS "theBudget_Expense";
 
 CREATE  TABLE "theBudget_Expense".dim_activity ( 
 	activitycode         VARCHAR  NOT NULL  ,
