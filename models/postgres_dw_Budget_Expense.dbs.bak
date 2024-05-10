@@ -51,7 +51,7 @@
 			</index>
 		</table>
 		<table name="facts_budget/expense" prior="Facts_Budget/Expense" >
-			<column name="the_fact_id" prior="fact_id" type="INT" jt="4" mandatory="y" />
+			<column name="fact_id" type="INT" jt="4" mandatory="y" />
 			<column name="the_budget_fiscal_year" prior="budget_fiscal_year" type="INT" jt="4" />
 			<column name="the_thru_quarter" prior="thru_quarter" type="INT" jt="4" />
 			<column name="the_dept_the_rollup" prior="dept_the_rollup" type="varchar" jt="12" />
@@ -73,7 +73,7 @@
 			<column name="the_budget_deficit" prior="budget_deficit" type="numeric" length="20" decimal="2" jt="2" />
 			<column name="the_key" prior="key" type="varchar" jt="12" />
 			<index name="pk_facts" unique="PRIMARY_KEY" >
-				<column name="the_fact_id" />
+				<column name="fact_id" />
 				<column name="the_unit_code" />
 			</index>
 			<fk name="fk_facts__dim_unit" virtual="y" to_schema="Budget&amp;Expense_dw-lgl.instance" to_table="dim_the_unit" >
