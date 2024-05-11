@@ -30,7 +30,7 @@ The analysis focuses on comparing actual expenditures against budget allocations
 2. Complex budget categorization: Classification nuances, such as base wages and leave-related expenses, may complicate expenditure tracking
 3. Exclusion of certain budget items: Excluded items for competitive reasons may limit the comprehensiveness of the analysis
 
-### Dimensional Model
+## Dimensional Model
 This project's dimensional model consists of one facts table and seven dimensions tables
 Here is the model:
 ![Dimensional-Model-screenshot](https://github.com/FULIN2024/cis9440hw12/assets/159972695/17dcc483-fa40-4b76-a26e-8ca67af03ba8)
@@ -78,5 +78,8 @@ Data Loaded
 ### Budget&Expenditures_by_ExpenseItem
 ![Budget&Expenditures_by_ExpenseItem](https://github.com/FULIN2024/cis9440hw12/assets/159972695/548aecee-586c-455e-91b6-b30f5776dedc)
 
+
+## Deployment
+The project was deployed on PowerBI
 
 
