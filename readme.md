@@ -33,7 +33,8 @@ The analysis focuses on comparing actual expenditures against budget allocations
 ## Dimensional Model
 This project's dimensional model consists of one facts table and seven dimensions tables
 Here is the model:
-![Dimensional-Model-screenshot](https://github.com/FULIN2024/cis9440hw12/assets/159972695/26e8170e-05e0-4e54-8891-eed3d8062956)
+![Dimensional-Model-screenshot](https://github.com/FULIN2024/cis9440hw12/assets/159972695/4cdfb42b-40f1-49c5-a0e3-dd621b3b03c0)
+
 
 ## Methods
 
