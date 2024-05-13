@@ -57,20 +57,20 @@ Data Loaded.
 #### Analysis of Budget Deficit by Department: (See fig1 below in Appendices)
 The study of the most struggling departments helps the decision-makers and managers in the identification of these departments and the subsequent budget adjustments or resources reallocation for them.
 
-Key findings:
+##### Key findings:
 
 Departments with Significant Deficits: The biggest is “Austin Energy”, with a surplus far smaller than those of others, almost in the $0.6 billion. This is opposite to “Austin Water”, and “Aviation”.
 
 Departments with Minimal Deficits: Such as “Planning and Zoning CIPS” and “Austin Code” which are the objects where the budget deficit is nearly zero (Full fig please check powerbi file).
 
-Conclusions:
+##### Conclusions:
 
 For the departments that have no deficits, it could be possible to keep the status quo or to copy their budget management ways in other departments to boost the financial situation.
 
 In departments where there is a considerable shortage, it is wise to review and reduce spending on activities that are not core to the department's function.
 
 #### Analysis of Budget Deficit by Fund: (See fig2 below in Appendices)
-Key findings:
+##### Key findings:
 
 Funds with Significant Deficits: The “General Fund” has the largest deficit, close to $0.8 billion, followed by the “Austin Energy Fund”.
 
@@ -78,43 +78,43 @@ Funds with Minimal Deficits: “Police Federal Grant Fund” and “Convention C
 
 Funds with Minimal Deficits: Close to zero, it is “General SVC Inventories" and "Water Inventory Fund", with the deficits nearly reaching zero (Full fig please check PowerBi file).
 
-Conclusion:
+##### Conclusion:
 
 The energy and water sectors face significant financial challenges in their operations.
 
 #### Analysis of Budget Deficit by Program:(See fig3 below in Appendices)
-Key findings:
+##### Key findings:
 
 Programs with Significant Deficits: “The “Transfer,Debt Service, And other requirements” program is the one with the highest deficit, which is more than $1.5 billion.
 
 Programs with Minimal Deficits: Examples such as "Power Supply", where the deficits are nearly zero.
 
-Conclusion:
+##### Conclusion:
 
 The distribution of deficits might be a sign that certain important public service areas (for example, emergency services, housing, and power supply) are in need of investments that are far higher than the currently allocated budget.
 
 
 #### Analysis of Expenditures by Department: (See fig4 below in Appendices)
-Key findings:
+##### Key findings:
 
 Departments with the Highest Expenditures: "Austin Energy" stands out as the department with the highest expenditure, accounting for 17.93% of the total. Following closely is "Austin Water", which accounts for 11.2% of the overall budget. Notable departments such as "Police" (5.77%), and Fire (4.16%) also make up a substantial part of the budget, reflecting their importance in city operations.
 
-Conclusion: High-expenditure departments like Austin Energy and Austin Water may require more resources to maintain operations, which could be part of the reason for their significant budget deficits.
+##### Conclusion: High-expenditure departments like Austin Energy and Austin Water may require more resources to maintain operations, which could be part of the reason for their significant budget deficits.
 
 #### Analysis of Budget and Expenditures by Expense Item: (See fig5 below in Appendices)
-Key findings & Conclusion:
+##### Key findings & Conclusion:
 
-Top Expenses Items: 
+##### Top Expenses Items: 
 
 "Regular Wages Full-Time": This thing demonstrates the highest spend, thus it has greatly crossed its budget. This suggests a major allocation of funds towards full-time wages, which could indicate higher than expected staffing costs or perhaps extensive overtime expenditures.
 
 "Regular Services Other": Besides, it demonstrates significant expenses, nevertheless, it is more in line with the intended budget, hence indicating that the managers are able to better control these expenses than full-time wages.
 
-Expense Items Exceeding Budget:
+##### Expense Items Exceeding Budget:
 
 Several expense items like "Interest Expense" and "Pension Medical Premiums" appear to exceed their budget allocations, highlighting areas where financial planning may need adjustment.
 
-Expense Items with Lower Expenditures:
+##### Expense Items with Lower Expenditures:
 
 There shows some like "Consulting Services" and "Maintenance Supplies" where actual expenditures are significantly below the budget, suggesting potential overestimation in budgeting or successful cost-saving measures in these areas.
 
@@ -140,5 +140,6 @@ There shows some like "Consulting Services" and "Maintenance Supplies" where act
 
 ## Deployment
 The project was deployed on PowerBI
+Please check pbix file in 'docs' folder
 
 
