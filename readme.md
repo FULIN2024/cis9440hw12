@@ -59,9 +59,12 @@ The study of the most struggling departments helps the decision-makers and manag
 
 Key findings:
 Departments with Significant Deficits: The biggest is “Austin Energy”, with a surplus far smaller than those of others, almost in the $0.6 billion. This is opposite to “Austin Water”, and “Aviation”.
+
 Departments with Minimal Deficits: Such as “Planning and Zoning CIPS” and “Austin Code” which are the objects where the budget deficit is nearly zero (Full fig please check powerbi file).
+
 Conclusions:
 For the departments that have no deficits, it could be possible to keep the status quo or to copy their budget management ways in other departments to boost the financial situation.
+
 In departments where there is a considerable shortage, it is wise to review and reduce spending on activities that are not core to the department's function.
 
 #### Analysis of Budget Deficit by Fund: (See fig2 below in Appendices)
