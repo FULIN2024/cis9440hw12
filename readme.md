@@ -56,6 +56,7 @@ Data Loaded.
 
 #### Analysis of Budget Deficit by Department: (See fig1 below in Appendices)
 The study of the most struggling departments helps the decision-makers and managers in the identification of these departments and the subsequent budget adjustments or resources reallocation for them.
+
 Key findings:
 Departments with Significant Deficits: The biggest is “Austin Energy”, with a surplus far smaller than those of others, almost in the $0.6 billion. This is opposite to “Austin Water”, and “Aviation”.
 Departments with Minimal Deficits: Such as “Planning and Zoning CIPS” and “Austin Code” which are the objects where the budget deficit is nearly zero (Full fig please check powerbi file).
