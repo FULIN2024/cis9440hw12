@@ -99,7 +99,9 @@ The distribution of deficits might be a sign that certain important public servi
 
 Departments with the Highest Expenditures: "Austin Energy" stands out as the department with the highest expenditure, accounting for 17.93% of the total. Following closely is "Austin Water", which accounts for 11.2% of the overall budget. Notable departments such as "Police" (5.77%), and Fire (4.16%) also make up a substantial part of the budget, reflecting their importance in city operations.
 
-##### Conclusion: High-expenditure departments like Austin Energy and Austin Water may require more resources to maintain operations, which could be part of the reason for their significant budget deficits.
+##### Conclusion: 
+
+High-expenditure departments like Austin Energy and Austin Water may require more resources to maintain operations, which could be part of the reason for their significant budget deficits.
 
 #### Analysis of Budget and Expenditures by Expense Item: (See fig5 below in Appendices)
 ##### Key findings & Conclusion:
