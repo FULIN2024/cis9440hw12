@@ -124,24 +124,25 @@ There shows some like "Consulting Services" and "Maintenance Supplies" where act
 
 
 ## Appendices for Visualizations
-### Budget_Deficit_by_Department
+### Budget_Deficit_by_Department-1
 ![Budget_Deficit_by_Department](https://github.com/FULIN2024/cis9440hw12/assets/159972695/d11a3bbe-352d-4316-9399-251bc7e3c296)
 
-### Budget_Deficit_by_Fund
+### Budget_Deficit_by_Fund-2
 ![Budget_Deficit_by_Fund](https://github.com/FULIN2024/cis9440hw12/assets/159972695/21bac8b0-6c1d-4cd4-bdfd-83ffa150595f)
 
-### Budget_Deficit_by_Program
+### Budget_Deficit_by_Program-3
 ![Budget_Deficit_by_Program](https://github.com/FULIN2024/cis9440hw12/assets/159972695/56032acf-2e80-4329-8abb-d2ba751fb903)
 
-### Expenditures_by_Department
+### Expenditures_by_Department-4
 ![Expenditures_by_Department](https://github.com/FULIN2024/cis9440hw12/assets/159972695/4bcabed3-d944-4dc2-b623-0ef25409473c)
 
-### Budget&Expenditures_by_ExpenseItem
+### Budget&Expenditures_by_ExpenseItem-5
 ![Budget&Expenditures_by_ExpenseItem](https://github.com/FULIN2024/cis9440hw12/assets/159972695/548aecee-586c-455e-91b6-b30f5776dedc)
 
 
 ## Deployment
 The project was deployed on PowerBI
+
 Please check pbix file in 'docs' folder
 
 
