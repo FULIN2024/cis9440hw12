@@ -47,8 +47,8 @@ Here is the model:
 - **Business Intelligence**: Use PowerBI for creating data visualizations and dashboards
 
 ## Data Processing
-Data Extraction
-Data Cleaning and Transformation
+Data Extraction,
+Data Cleaning and Transformation,
 Data Loaded
 
 ## Analysis and Insights
